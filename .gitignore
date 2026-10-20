@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+**/node_modules/
+**/dist/
+**/*.local
+Isha_Yadav_Resume*.docx
+/Isha_Yadav_photo.jpeg
+minimalist_u_path_tech_slider.html.html

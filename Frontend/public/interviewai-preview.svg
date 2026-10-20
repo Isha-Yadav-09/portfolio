@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" fill="none">
+  <defs>
+    <linearGradient id="background" x1="80" y1="40" x2="1110" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182849"/>
+      <stop offset="1" stop-color="#10192D"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="780" y1="118" x2="1020" y2="598" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64FFDA" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#7D67E8" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="button" x1="210" y1="476" x2="483" y2="555" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#76E9D0"/>
+      <stop offset="1" stop-color="#87C9EA"/>
+    </linearGradient>
+    <filter id="shadow" x="615" y="88" width="513" height="573" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v720H0z"/>
+  <circle cx="925" cy="354" r="255" fill="url(#glow)"/>
+  <circle cx="926" cy="378" r="209" fill="#64FFDA" fill-opacity=".1" filter="url(#shadow)"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="63" y="54" width="1074" height="612" rx="22" fill="#0B1425" stroke="#536581" stroke-opacity=".55" stroke-width="2"/>
+    <path fill="#101D32" d="M85 54h1030a22 22 0 0 1 22 22v48H63V76a22 22 0 0 1 22-22Z"/>
+    <circle cx="94" cy="88" r="6" fill="#FF817B"/>
+    <circle cx="116" cy="88" r="6" fill="#F2C66D"/>
+    <circle cx="138" cy="88" r="6" fill="#65D6A2"/>
+    <rect x="431" y="73" width="340" height="29" rx="14.5" fill="#0A1425"/>
+    <text x="601" y="92" fill="#8998B3" font-size="12" text-anchor="middle">interviewai.app / dashboard</text>
+
+    <rect x="64" y="124" width="207" height="541" fill="#0D192C"/>
+    <rect x="88" y="149" width="28" height="28" rx="9" fill="#64FFDA"/>
+    <path d="M96 166c6-10 8-10 14 0m-7-11v14" stroke="#0D192C" stroke-linecap="round" stroke-width="2"/>
+    <text x="127" y="168" fill="#E6F0FF" font-size="17" font-weight="700">InterviewAI</text>
+    <rect x="82" y="203" width="170" height="39" rx="9" fill="#64FFDA" fill-opacity=".12"/>
+    <path d="M100 216h13v13h-13z" stroke="#64FFDA" stroke-width="1.5"/>
+    <text x="124" y="228" fill="#D6E5F7" font-size="12">Dashboard</text>
+    <text x="98" y="278" fill="#7889A5" font-size="11">PREPARATION</text>
+    <circle cx="106" cy="309" r="7" stroke="#8191AC" stroke-width="1.5"/>
+    <text x="124" y="313" fill="#AAB8CC" font-size="12">My interviews</text>
+    <path d="M100 350h12m-6-6v12" stroke="#8191AC" stroke-linecap="round" stroke-width="1.5"/>
+    <text x="124" y="355" fill="#AAB8CC" font-size="12">Resume builder</text>
+    <rect x="83" y="601" width="30" height="30" rx="15" fill="#273955"/>
+    <text x="98" y="620" fill="#D6E5F7" font-size="11" font-weight="700" text-anchor="middle">IY</text>
+    <text x="122" y="615" fill="#D6E5F7" font-size="11">Isha Yadav</text>
+    <text x="122" y="630" fill="#7889A5" font-size="9">Free plan</text>
+
+    <text x="304" y="177" fill="#F0F4FC" font-size="25" font-weight="700">Good morning, Isha</text>
+    <text x="304" y="201" fill="#94A3BA" font-size="12">Your next opportunity starts with a little preparation.</text>
+    <rect x="304" y="226" width="798" height="148" rx="14" fill="#14243B" stroke="#2A3D5A"/>
+    <rect x="326" y="248" width="42" height="42" rx="12" fill="#64FFDA" fill-opacity=".14"/>
+    <path d="m339 270 6 6 11-14" stroke="#64FFDA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <text x="383" y="263" fill="#DDE8F7" font-size="15" font-weight="700">Your next interview, made personal.</text>
+    <text x="383" y="285" fill="#94A3BA" font-size="11">Turn your resume and a job description into a practical prep plan.</text>
+    <rect x="326" y="311" width="175" height="40" rx="8" fill="url(#button)"/>
+    <text x="413" y="336" fill="#102338" font-size="12" font-weight="700" text-anchor="middle">Create an interview plan</text>
+    <text x="304" y="413" fill="#E2EAF5" font-size="15" font-weight="700">Your preparation</text>
+    <text x="1058" y="413" fill="#64FFDA" font-size="11" text-anchor="end">View all</text>
+
+    <rect x="304" y="432" width="386" height="194" rx="13" fill="#14243B" stroke="#2A3D5A"/>
+    <rect x="322" y="450" width="36" height="36" rx="10" fill="#7D67E8" fill-opacity=".2"/>
+    <path d="M333 475v-9m7 9v-16m7 16v-12" stroke="#B8A8FF" stroke-linecap="round" stroke-width="2"/>
+    <text x="371" y="464" fill="#E2EAF5" font-size="13" font-weight="700">Frontend Engineer</text>
+    <text x="371" y="482" fill="#8999B2" font-size="10">Personalized mock interview</text>
+    <rect x="322" y="507" width="344" height="7" rx="3.5" fill="#263852"/>
+    <rect x="322" y="507" width="232" height="7" rx="3.5" fill="#64FFDA"/>
+    <text x="322" y="536" fill="#B5C2D5" font-size="10">Preparation progress</text>
+    <text x="666" y="536" fill="#64FFDA" font-size="10" text-anchor="end">68%</text>
+    <text x="322" y="577" fill="#8293AC" font-size="10">12 questions  ·  3 skill areas  ·  Updated today</text>
+    <rect x="707" y="432" width="395" height="194" rx="13" fill="#14243B" stroke="#2A3D5A"/>
+    <text x="729" y="461" fill="#E2EAF5" font-size="13" font-weight="700">Focus areas</text>
+    <text x="729" y="490" fill="#AAB8CC" font-size="10">React fundamentals</text>
+    <rect x="870" y="481" width="202" height="7" rx="3.5" fill="#263852"/>
+    <rect x="870" y="481" width="155" height="7" rx="3.5" fill="#64FFDA"/>
+    <text x="729" y="522" fill="#AAB8CC" font-size="10">System design</text>
+    <rect x="870" y="513" width="202" height="7" rx="3.5" fill="#263852"/>
+    <rect x="870" y="513" width="120" height="7" rx="3.5" fill="#8F85F6"/>
+    <text x="729" y="554" fill="#AAB8CC" font-size="10">Behavioral stories</text>
+    <rect x="870" y="545" width="202" height="7" rx="3.5" fill="#263852"/>
+    <rect x="870" y="545" width="170" height="7" rx="3.5" fill="#72BDE8"/>
+    <text x="729" y="596" fill="#8191AA" font-size="10">Based on your resume and target role</text>
+  </g>
+</svg>
