@@ -1,22 +1,10 @@
-<div align="center">
+# Isha Yadav — Portfolio
+
+A personal portfolio built with React and Vite.
 
 ![Portfolio homepage preview](image.png)
 
-# Isha Yadav — Portfolio
 
-**Software engineer · NIT Silchar**
-
-A personal site for my experience, projects, and the things I love building.
-
-</div>
-
-## ✨ About
-
-I’m a Computer Science graduate from **NIT Silchar** (CGPA: 9.34) and have
-interned at **UKG** and **Microsoft**, working on frontend development,
-application security, and systems software.
-
-The portfolio is a frontend-only React and Vite application.
 
 ## 🛠 Set up
 
