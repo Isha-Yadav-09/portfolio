@@ -13,7 +13,7 @@ const projects = [
     description:
       "AI-powered interview preparation and resume tools, personalized to each role.",
     link: "https://github.com/Isha-Yadav-09/Interview-Ai",
-    image: "/interviewai-preview.svg",
+    image: `${import.meta.env.BASE_URL}interviewai-preview.svg`,
     imageAlt: "InterviewAI dashboard preview",
   },
   {
