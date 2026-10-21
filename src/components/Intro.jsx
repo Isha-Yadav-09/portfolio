@@ -16,9 +16,7 @@ function Intro() {
         </h1>
 
         <p className="hero-description">
-          I enjoy working at both ends of the stack: crafting thoughtful
-          experiences people love to use and building the systems that make
-          them fly.
+          I build thoughtful user experiences and reliable software systems.
         </p>
 
         <div className="hero-actions">
