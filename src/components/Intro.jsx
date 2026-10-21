@@ -16,7 +16,10 @@ function Intro() {
         </h1>
 
         <p className="hero-description">
-          I build thoughtful user experiences and reliable software systems.
+          I’m a software engineer who loves figuring out how things work. I’ve
+          worked on systems software at Microsoft and built secure, accessible
+          web experiences at UKG. Outside of work, I enjoy exploring new ideas,
+          building side projects, and getting lost in a good anime.
         </p>
 
         <div className="hero-actions">
