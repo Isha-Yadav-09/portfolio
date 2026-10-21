@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SectionHeading from "./SectionHeading";
-import interviewPreview from "../../interview.png";
-import shellcraftPreview from "../../Shell.png";
-import portfolioPreview from "../../portfolio.png";
 
 const projects = [
   {
@@ -16,7 +13,7 @@ const projects = [
     description:
       "AI-powered interview preparation and resume tools, personalized to each role.",
     link: "https://github.com/Isha-Yadav-09/Interview-Ai",
-    image: interviewPreview,
+    image: `${import.meta.env.BASE_URL}images/interview.png`,
     imageAlt: "InterviewAI project preview",
   },
   {
@@ -26,7 +23,7 @@ const projects = [
     description:
       "A custom C shell with pipelines, job control, and useful everyday commands.",
     link: "https://github.com/Isha-Yadav-09/ShellCraft",
-    image: shellcraftPreview,
+    image: `${import.meta.env.BASE_URL}images/Shell.png`,
     imageAlt: "ShellCraft running in a macOS terminal",
   },
   {
@@ -35,7 +32,7 @@ const projects = [
     category: "Responsive Portfolio Website",
     description:
       "A responsive portfolio for my experience, projects, and technologies.",
-    image: portfolioPreview,
+    image: `${import.meta.env.BASE_URL}images/portfolio.png`,
     imageAlt: "Personal portfolio homepage preview",
   },
 ];

@@ -8,7 +8,7 @@ function About() {
       <div className="about-content">
         <img
           className="about-photo"
-          src={`${import.meta.env.BASE_URL}Isha_Yadav_photo.jpeg`}
+          src={`${import.meta.env.BASE_URL}images/Isha_Yadav_photo.jpeg`}
           alt="Isha Yadav"
           loading="lazy"
         />

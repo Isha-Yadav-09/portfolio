@@ -2,7 +2,7 @@
 
 A personal portfolio built with React and Vite.
 
-![Portfolio homepage preview](image.png)
+![Portfolio homepage preview](public/images/portfolio.png)
 
 
 
