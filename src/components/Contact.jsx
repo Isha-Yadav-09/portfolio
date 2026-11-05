@@ -5,13 +5,13 @@ function Contact() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
     const subject = `Portfolio message from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const body = message;
     const query = new URLSearchParams({ subject, body });
-
-    window.location.href = `mailto:ishayadav1012@gmail.com?${query}`;
+    window.location.assign(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=ishayadav1012@gmail.com&${query}`,
+    );
   }
 
   return (
@@ -26,7 +26,10 @@ function Contact() {
           Have an opportunity, project, or interesting problem to discuss? Send
           me a message.
         </p>
-        <a className="contact-email" href="mailto:ishayadav1012@gmail.com">
+        <a
+          className="contact-email"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=ishayadav1012@gmail.com"
+        >
           ishayadav1012@gmail.com <ArrowUpRight size={17} />
         </a>
       </div>
@@ -36,7 +39,7 @@ function Contact() {
         <input
           id="name"
           name="name"
-          placeholder="Jane Smith"
+          placeholder="Priya Sharma"
           required
         />
 
@@ -45,7 +48,7 @@ function Contact() {
           id="email"
           name="email"
           type="email"
-          placeholder="jane@example.com"
+          placeholder="priya.sharma@example.com"
           required
         />
 
@@ -58,13 +61,13 @@ function Contact() {
           required
         />
 
-        <button className="button button-primary submit-button">
+        <button className="button button-primary submit-button" type="submit">
           Send via email
           <ArrowUpRight size={17} />
         </button>
 
         <p className="form-status">
-          Your email app will open with your message ready to send.
+          Gmail will open with your message ready to send.
         </p>
       </form>
     </section>

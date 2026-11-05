@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import PropTypes from "prop-types";
 
 const navLinks = [
   ["Home", "/"],
@@ -10,7 +11,7 @@ const navLinks = [
   ["Technology", "/#skills"],
 ];
 
-function Navbar() {
+function Navbar({ theme, onThemeChange }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function closeMenu() {
@@ -31,6 +32,19 @@ function Navbar() {
             </Link>
           ))}
         </nav>
+
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          onClick={() =>
+            onThemeChange((currentTheme) =>
+              currentTheme === "dark" ? "light" : "dark",
+            )
+          }
+        >
+          {theme === "dark" ? <Sun /> : <Moon />}
+        </button>
 
         <button
           className="menu-toggle"
@@ -70,5 +84,10 @@ function Navbar() {
     </>
   );
 }
+
+Navbar.propTypes = {
+  theme: PropTypes.oneOf(["dark", "light"]).isRequired,
+  onThemeChange: PropTypes.func.isRequired,
+};
 
 export default Navbar;
