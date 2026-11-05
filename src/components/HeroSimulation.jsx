@@ -60,6 +60,17 @@ function HeroSimulation() {
     let visible = true;
     let animationFrame = 0;
     let startTime = performance.now();
+    let isLightTheme = document.documentElement.dataset.theme === "light";
+
+    const themeObserver = new MutationObserver(() => {
+      isLightTheme = document.documentElement.dataset.theme === "light";
+      startTime = performance.now();
+      scheduleRender();
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
 
     const render = (now) => {
       animationFrame = 0;
@@ -82,8 +93,11 @@ function HeroSimulation() {
         centerY,
         Math.max(radiusX, radiusY),
       );
-      glow.addColorStop(0, "rgba(100, 255, 218, 0.10)");
-      glow.addColorStop(0.55, "rgba(100, 255, 218, 0.035)");
+      const accentColor = isLightTheme ? "232, 180, 157" : "100, 255, 218";
+      const secondaryColor = isLightTheme ? "194, 122, 92" : "136, 180, 190";
+
+      glow.addColorStop(0, `rgba(${accentColor}, 0.14)`);
+      glow.addColorStop(0.55, `rgba(${accentColor}, 0.045)`);
       glow.addColorStop(1, "rgba(10, 25, 47, 0)");
       context.fillStyle = glow;
       context.fillRect(0, 0, width, height);
@@ -127,8 +141,8 @@ function HeroSimulation() {
         );
         context.fillStyle =
           x + y > 0.15
-            ? `rgba(100, 255, 218, ${alpha})`
-            : `rgba(136, 180, 190, ${alpha * 0.72})`;
+            ? `rgba(${accentColor}, ${alpha})`
+            : `rgba(${secondaryColor}, ${alpha * 0.72})`;
         context.fill();
       }
 
@@ -191,6 +205,7 @@ function HeroSimulation() {
       canvas.removeEventListener("pointermove", movePointer);
       canvas.removeEventListener("pointerleave", clearPointer);
       motionPreference.removeEventListener("change", scheduleRender);
+      themeObserver.disconnect();
       if (animationFrame) window.cancelAnimationFrame(animationFrame);
     };
   }, []);

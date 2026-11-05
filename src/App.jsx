@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -24,18 +25,22 @@ function Footer() {
   );
 }
 
-function HomePage() {
+function HomePage({ theme }) {
   return (
     <main>
       <Intro />
       <About />
       <Experience />
-      <Projects featured />
+      <Projects featured theme={theme} />
       <Technology />
       <Contact />
     </main>
   );
 }
+
+HomePage.propTypes = {
+  theme: PropTypes.oneOf(["dark", "light"]).isRequired,
+};
 
 function NotFound() {
   return (
@@ -53,6 +58,15 @@ function NotFound() {
 
 function App() {
   const location = useLocation();
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    return savedTheme === "dark" ? "dark" : "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     if (location.hash) {
@@ -70,9 +84,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onThemeChange={setTheme} />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage theme={theme} />} />
         <Route
           path="/experience"
           element={
@@ -81,7 +95,7 @@ function App() {
             </main>
           }
         />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Projects theme={theme} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

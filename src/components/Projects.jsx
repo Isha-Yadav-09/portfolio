@@ -33,16 +33,21 @@ const projects = [
     description:
       "A responsive portfolio for my experience, projects, and technologies.",
     image: `${import.meta.env.BASE_URL}images/portfolio.png`,
+    darkImage: `${import.meta.env.BASE_URL}images/portfolio2.png`,
     imageAlt: "Personal portfolio homepage preview",
   },
 ];
 
-function ProjectArtwork({ project }) {
+function ProjectArtwork({ project, theme }) {
+  const image =
+    theme === "dark" && project.darkImage ? project.darkImage : project.image;
+
   return (
     <div className={`project-cover${project.cover ? ` project-cover-${project.cover}` : ""}`}>
-      {project.image ? (
+      {image ? (
         <img
-          src={project.image}
+          className="project-cover-image"
+          src={image}
           alt={project.imageAlt}
           loading={project.number === "01" ? "eager" : "lazy"}
         />
@@ -105,6 +110,7 @@ ProjectArtwork.propTypes = {
   project: PropTypes.shape({
     cover: PropTypes.string,
     image: PropTypes.string,
+    darkImage: PropTypes.string,
     imageAlt: PropTypes.string,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
@@ -112,14 +118,21 @@ ProjectArtwork.propTypes = {
     description: PropTypes.string.isRequired,
     link: PropTypes.string,
   }).isRequired,
+  theme: PropTypes.oneOf(["dark", "light"]),
 };
 
-function ProjectCover({ project, onPrevious, onNext, showOverlay = true }) {
+function ProjectCover({
+  project,
+  theme,
+  onPrevious,
+  onNext,
+  showOverlay = true,
+}) {
   return (
     <div
       className={`project-cover-frame${showOverlay ? " project-cover-frame-featured" : ""}`}
     >
-      <ProjectArtwork project={project} />
+      <ProjectArtwork project={project} theme={theme} />
       {showOverlay && (
         <>
           <div className="project-cover-overlay">
@@ -161,12 +174,13 @@ function ProjectCover({ project, onPrevious, onNext, showOverlay = true }) {
 
 ProjectCover.propTypes = {
   project: ProjectArtwork.propTypes.project,
+  theme: PropTypes.oneOf(["dark", "light"]),
   onPrevious: PropTypes.func,
   onNext: PropTypes.func,
   showOverlay: PropTypes.bool,
 };
 
-function FeaturedProjects() {
+function FeaturedProjects({ theme }) {
   const [activeProject, setActiveProject] = useState(0);
   const project = projects[activeProject];
 
@@ -205,6 +219,7 @@ function FeaturedProjects() {
         >
           <ProjectCover
             project={project}
+            theme={theme}
             onPrevious={() => showProject(activeProject - 1)}
             onNext={() => showProject(activeProject + 1)}
           />
@@ -229,7 +244,11 @@ function FeaturedProjects() {
   );
 }
 
-function ProjectsPage() {
+FeaturedProjects.propTypes = {
+  theme: PropTypes.oneOf(["dark", "light"]).isRequired,
+};
+
+function ProjectsPage({ theme }) {
   return (
     <main className="projects-page section-wrap">
       <SectionHeading
@@ -246,7 +265,7 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
           >
-            <ProjectCover project={project} showOverlay={false} />
+            <ProjectCover project={project} theme={theme} showOverlay={false} />
             <div className="archive-project-content">
               <span className="project-category">{project.category}</span>
               <h3>{project.name}</h3>
@@ -275,12 +294,21 @@ function ProjectsPage() {
   );
 }
 
-function Projects({ featured = false }) {
-  return featured ? <FeaturedProjects /> : <ProjectsPage />;
+ProjectsPage.propTypes = {
+  theme: PropTypes.oneOf(["dark", "light"]).isRequired,
+};
+
+function Projects({ featured = false, theme }) {
+  return featured ? (
+    <FeaturedProjects theme={theme} />
+  ) : (
+    <ProjectsPage theme={theme} />
+  );
 }
 
 Projects.propTypes = {
   featured: PropTypes.bool,
+  theme: PropTypes.oneOf(["dark", "light"]),
 };
 
 export default Projects;
